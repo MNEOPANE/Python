@@ -1,0 +1,10 @@
+import pandas as pd
+data1 = pd.read_excel('FMGR.xlsx',
+    sheet_name= 'fmg',
+    header = 0)
+data2 = pd.read_excel('Xenon.xlsx',
+    sheet_name= 'xenon',
+    header = 0)
+print(data1,data2)
+mg = pd.merge(data1, data2, on='Name', how='inner')
+mg.to_csv('result4.csv')
